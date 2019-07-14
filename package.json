@@ -1,0 +1,28 @@
+{
+  "name": "gremlin",
+  "version": "0.0.1",
+  "description": "A fluidsynth web interface for Raspberry Pi soft synths",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "node server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/billpatrianakos/gremlin.git"
+  },
+  "author": "Bill Patrianakos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/billpatrianakos/gremlin/issues"
+  },
+  "homepage": "https://github.com/billpatrianakos/gremlin#readme",
+  "dependencies": {
+    "bookshelf": "^0.15.1",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "knex": "^0.19.0",
+    "morgan": "^1.9.1",
+    "sqlite3": "^4.0.9"
+  }
+}
