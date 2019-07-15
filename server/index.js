@@ -2,8 +2,10 @@
 
 const express = require('express');
 const app     = express();
+const path    = require('path');
 
 app.set('view engine', 'ejs');
+if (process.env.NODE_ENV === 'production') app.use(express.static('public'));
 
 app.get('/', (req, res, next) => {
   res.send('Testing 123');
