@@ -18,11 +18,15 @@
   },
   "homepage": "https://github.com/billpatrianakos/gremlin#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "bookshelf": "^0.15.1",
+    "csurf": "^1.10.0",
     "ejs": "^2.6.2",
     "express": "^4.17.1",
+    "express-session": "^1.16.2",
     "gulp-less": "^4.0.1",
     "knex": "^0.19.0",
+    "lodash": "^4.17.14",
     "morgan": "^1.9.1",
     "sqlite3": "^4.0.9"
   },
