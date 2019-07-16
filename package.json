@@ -21,8 +21,13 @@
     "bookshelf": "^0.15.1",
     "ejs": "^2.6.2",
     "express": "^4.17.1",
+    "gulp-less": "^4.0.1",
     "knex": "^0.19.0",
     "morgan": "^1.9.1",
     "sqlite3": "^4.0.9"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-live-server": "0.0.31"
   }
 }
