@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <title>Gremlin Synth Controller</title>
+  <title>Log in | Gremlin Synth Controller</title>
   <meta name="description" content="Gremlin Synth control page" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -21,10 +21,10 @@
 <body>
 
   <main class="container">
-    <h1>Gremlin Synth</h1>
-    <% files.forEach((file) => { %>
-      <%= file %>
-    <% }) %>
+    <% if (messages) { %>
+      <%= messages %>
+    <% } %>
+    <h1>Log in</h1>
   </main>
 
   <script src="js/scripts.js"></script>
