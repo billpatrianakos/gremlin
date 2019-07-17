@@ -5,7 +5,7 @@ let gulp = require('gulp'),
 
 // Start server
 gulp.task('server', () => {
-  let server = gls.new('./server/index.js');
+  let server = gls.new('./server/index.js', {env: 'development'});
   server.start();
 
   gulp.watch(['gulpfile.js', './server/index.js', 'server/{routes,models}/**/*.js'], (file) => {
