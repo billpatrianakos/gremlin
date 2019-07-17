@@ -1,43 +1,35 @@
 // Update with your config settings.
+const _       = require('lodash');
+const config  = _.merge(require('../config/application').defaults, require('../config/application')[process.env.NODE_ENV || 'development']);
 
 module.exports = {
 
   development: {
     client: 'sqlite3',
     connection: {
-      filename: './db/dev.sqlite3'
-    }
-  },
-
-  staging: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
-    pool: {
-      min: 2,
-      max: 10
+      filename: './config/db/dev.sqlite3'
     },
     migrations: {
-      tableName: 'knex_migrations'
+      directory: './config/db/migrations'
+    },
+    seeds: {
+      directory: './config/db/seeds/dev'
     }
   },
 
   production: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
+    client: config.database.client,
+    connection: config.database.connection,
     pool: {
       min: 2,
       max: 10
     },
     migrations: {
-      tableName: 'knex_migrations'
+      tableName: 'knex_migrations',
+      directory: './config/db/migrations'
+    },
+    seeds: {
+      directory: './config/db/seeds/production'
     }
   }
 
