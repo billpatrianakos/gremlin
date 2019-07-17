@@ -10,7 +10,7 @@ AuthController.route('/?')
   // GET /
   // -----
   .get((req, res, next) => {
-    res.render('index');
+    res.render('auth', { messages: req.flash('info') });
   });
 
 // AuthController.route('/login/?')

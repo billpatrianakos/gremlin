@@ -17,7 +17,5 @@ module.exports = function(app) {
     if (!fs.lstatSync(__dirname + '/' + file).isDirectory() && !_.includes(excluded, file)) {
       app.use('/' + basename, require('./' + file));
     }
-
-    if (file === 'default') app.use('/', require('./default'));
   });
 };
