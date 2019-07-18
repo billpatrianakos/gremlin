@@ -19,7 +19,12 @@ module.exports = {
     sf2Path: ''
   },
 
-  development: {},
+  development: {
+    database: {
+      client: '', // Intentionally left blank
+      connection: {} // Intentionally left blank
+    }
+  },
 
   // CHANGE ALL OF THESE BEFORE DEPLOYING
   // ------------------------------------

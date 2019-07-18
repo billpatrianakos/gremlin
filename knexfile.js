@@ -1,6 +1,6 @@
 // Configure your app in config/application.js to configure production
 const _       = require('lodash');
-const config  = _.merge(require('../config/application').defaults, require('../config/application')[process.env.NODE_ENV || 'development']);
+const config  = _.merge(require('./config/application').defaults, require('./config/application')[process.env.NODE_ENV || 'development']);
 
 module.exports = {
 
