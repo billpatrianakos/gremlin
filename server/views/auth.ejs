@@ -25,6 +25,13 @@
       <%= messages %>
     <% } %>
     <h1>Log in</h1>
+    <form method="post" action="/auth/login">
+      <input type="text" name="username" placeholder="Username" />
+      <br />
+      <input type="password" name="password" />
+      <br />
+      <input type="submit" name="Log in" />
+    </form>
   </main>
 
   <script src="js/scripts.js"></script>
