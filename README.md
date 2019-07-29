@@ -14,13 +14,13 @@ Gremlin will turn your Raspberry Pi into a portable synth. Just plug in a MIDI k
 - Connects a MIDI controller input (client 128) to FluidSynth output (client 20)
 - Plays a chime when it's fully loaded
 
-## Prerequisites
+## Requirements
 
-- A Raspberry Pi (tested on Raspberry Pi Model 2 B and higher) running Raspbian (Raspbian Lite recommended to save on disk space but works with regular Raspbian)
-- Wifi for your Raspberry Pi (a Wifi dongle works great otherwise you'll need to be wired in using the ethernet cable to connect to the web interface)
-- A way to access your Pi over the internet or a local network
+- A Raspberry Pi (tested on Raspberry Pi Model 2 B and higher) running Raspbian (tested on a headless Pi 2 running Raspian Lite headless)
+- Wifi capability for your Pi (a Wifi dongle works great otherwise you'll need to be wired in using the ethernet cable to connect to the web interface)
+- A way to access your Pi over the internet or a local network (I suggest setting up a Tinc VPN)
 - FluidSynth and alsa installed
-- Node and a web server like Nginx installed on your Pi
+- Node and a web server like Nginx installed on your Pi (tested with Node 10.16.0)
 
 ## Setting up your Raspberry Pi
 
