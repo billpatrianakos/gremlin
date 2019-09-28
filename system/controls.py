@@ -34,7 +34,7 @@ soundfont_files = glob.glob(SOUNDFONT_PATH + '*.sf2')
 current_sound = 0
 max_program   = len(soundfont_files) - 1
 # Encoder callbacks
-def next_sound():
+def next_sound(position):
     global current_sound
     global max_program
     global soundfont_files
@@ -45,7 +45,7 @@ def next_sound():
         current_sound += 1
         select_sound(soundfont_files[current_sound], current_sound)
 
-def prev_sound():
+def prev_sound(position):
     global current_sound
     global max_program
     global soundfont_files
