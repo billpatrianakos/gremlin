@@ -21,7 +21,7 @@ display_config = config['tm1637']
 ##
 # Constants
 ##
-SOUNDFONT_PATH = (sys.argv[0] and sys.argv[0] == 'production') ? config['DEFAULT']['soundfont_path'] : os.path.dirname(__file__) + '/../test/files/'
+SOUNDFONT_PATH = config['DEFAULT']['soundfont_path']
 # Rotary encoder constants
 ECLK = int(encoder_config['clock'])
 EDT  = int(encoder_config['data'])
