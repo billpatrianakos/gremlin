@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import configparser
-import os
+from subprocess import call
 import os.path
 import glob
 import sys
@@ -64,7 +64,7 @@ def reset_sound():
 def select_sound(filename, filenum):
     global display
     command_string = 'echo "load ' + filename + '" > /dev/tcp/localhost/9988'
-    os.system(command_string)
+    call(command_string, shell=True)
     display.scroll(filename)
     sleep(2)
     display.number(filenum)
