@@ -1,6 +1,7 @@
 #!/usr/bin.env python3
 
 import configparser
+import os
 import os.path
 import glob
 import sys
@@ -37,6 +38,7 @@ def next_sound():
     global current_sound
     global max_program
     global soundfont_files
+    global display
     if (current_sound + 1) > max_program:
         display.show('max')
     else:
@@ -44,16 +46,28 @@ def next_sound():
         select_sound(soundfont_files[current_sound], current_sound)
 
 def prev_sound():
-    pass
+    global current_sound
+    global max_program
+    global soundfont_files
+    global display
+    if (current_sound - 1) < 0:
+        display.show('max')
+    else:
+        current_sound -= 1
+        select_sound(soundfont_files[current_sound], current_sound)
 
 def reset_sound():
-    pass
+    global current_sound
+    current_sound = 0
+    select_sound(soundfont_files[current_sound], current_sound)
 
 def select_sound(filename, filenum):
-    # send telnet command to fluidsynth
-    tm.scroll(filename)
+    global display
+    command_string = 'echo "load ' + filename + '" > /dev/tcp/localhost/9988'
+    os.system(command_string)
+    display.scroll(filename)
     sleep(2)
-    tm.number(filenum)
+    display.number(filenum)
 
 # Init the encoder pins
 encoder_1 = pyky040.Encoder(CLK=ECLK, DT=EDT, SW=ESW)
@@ -71,5 +85,5 @@ sleep(10) # Give the rest of the system time to boot up Fluidsynth
 encoder_1.watch()
 
 while True:
-    print(encoder_config['switch'])
-    print(display_config['clock'])
+    print('Loaded. Ready to test...')
+    sleep(10)
