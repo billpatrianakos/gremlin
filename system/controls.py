@@ -65,6 +65,7 @@ def select_sound(filename, filenum):
     global display
     command_string = 'echo "load ' + filename + '" > /dev/tcp/localhost/9988'
     call(command_string, shell=True)
+    display_filename = filename.split('/')[-1].replace('.sf2', '')
     display.scroll(filename)
     sleep(2)
     display.number(filenum)
