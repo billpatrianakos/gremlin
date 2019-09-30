@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 
 import configparser
-from subprocess import call
 import os.path
 import glob
 import sys
 import tm1637
 from pyky040 import pyky040
 from time import sleep
+from subprocess import call
 
 ##
 # Get config settings
@@ -30,9 +30,11 @@ ESW  = int(encoder_config['switch'])
 DCLK = int(display_config['clock'])
 DDIO = int(display_config['data'])
 
+# A few variables we'll need globally
 soundfont_files = glob.glob(SOUNDFONT_PATH + '*.sf2')
 current_sound = 0
 max_program   = len(soundfont_files) - 1
+
 # Encoder callbacks
 def next_sound(position):
     global current_sound
@@ -63,8 +65,7 @@ def reset_sound():
 
 def select_sound(filename, filenum):
     global display
-    command_string = 'echo "load ' + filename + '" > /dev/tcp/localhost/9988'
-    call(command_string, shell=True)
+    call(['echo', '"load ' + filename + '"', '>', '/dev/tcp/localhost/9988'], shell=True)
     display_filename = filename.split('/')[-1].replace('.sf2', '').replace('_', '')
     display.scroll(display_filename)
     sleep(2)
