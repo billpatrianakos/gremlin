@@ -2,6 +2,7 @@
 
 import configparser
 import os.path
+import os
 import glob
 import sys
 import tm1637
@@ -65,7 +66,8 @@ def reset_sound():
 
 def select_sound(filename, filenum):
     global display
-    call(['echo', '"load ' + filename + '"', '>', '/dev/tcp/localhost/9988'], shell=True)
+    # call(['echo', '"load ' + filename + '"', '>', '/dev/tcp/localhost/9988'], shell=True)
+    call(['./switch_sf2.sh "' + filename + '"'], shell=True, cwd=os.getcwd())
     display_filename = filename.split('/')[-1].replace('.sf2', '').replace('_', '')
     display.scroll(display_filename)
     sleep(2)
