@@ -13,6 +13,7 @@ Gremlin will turn your Raspberry Pi into a portable synth. Just plug in a MIDI k
 - Starts a web server and Node.js application you can access to change SF2 files
 - Connects a MIDI controller input (client 128) to FluidSynth output (client 20)
 - Plays a chime when it's fully loaded
+- Change soundfounts using physical controls
 
 ## Requirements
 
