@@ -28,7 +28,7 @@
     "express-session": "^1.16.2",
     "gulp-less": "^4.0.1",
     "knex": "^0.19.0",
-    "lodash": "^4.17.14",
+    "lodash": "^4.17.19",
     "morgan": "^1.9.1",
     "sqlite3": "^4.0.9"
   },
